@@ -1,0 +1,163 @@
+$primaryColor: rgb(54, 112, 199);
+$whiteColor: #f4f4f4;
+$darkColor: #333;
+$lightColor: #e4e4e4;
+$warningColor: rgb(99, 36, 36);
+
+@import "fonts";
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+}
+body {
+    width: 100%;
+    height: 100%;
+    background-color: $primaryColor;
+    font-family: 'Work-Sans_Light', sans-serif;
+}
+h1 {
+    @include fontProperties (clamp(30px,11vw,125px), 900);
+    line-height: 65%;
+    color: $darkColor;
+    opacity: .3;
+    width:max-content;
+    margin: auto;
+    margin-bottom: 100px;
+}
+main {
+    width: clamp(400px, 95vw, 900px);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+
+    aside.listsContainer {
+        flex: 1 250px;
+        padding: 15px;
+        margin: 20px;
+        margin-bottom: 20px;
+        color: $whiteColor;
+        background-color: $primaryColor;
+        h2 {
+            @include fontProperties (36px, 700);
+            margin-bottom: 30px;
+        }
+        ul {
+            li.list {
+                list-style: circle;
+                margin: 14px;
+                font-size: 20px;
+                cursor: pointer;
+                transition: all ease .3s;
+                &:hover {
+                    padding-left: 10px;
+                }
+            }
+            li.active-list {
+                font-weight: 700;
+            }
+        } 
+        form {
+            margin-left: -15px;
+        }
+    }
+    form button,
+    form input {
+        height: 30px;
+        border: none;
+        color: $whiteColor;
+        background-color: inherit;
+    }
+    form button {
+        width: 30px;
+        @include fontProperties (30px, 700);
+    }
+    form input {
+        max-width: 200px;
+        font-size: 18px;
+        border-bottom: 1px solid $whiteColor;
+        outline: none;
+    }
+    
+    aside.tasksContainer {
+        flex: 1 350px;
+        background-color: $whiteColor;
+        color: $darkColor;
+        height: fit-content;
+        display: none;
+        header {
+            background-color: $lightColor;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px;
+            .listName {
+                @include fontProperties (34px, 700);
+            }
+            .tasksCounter {
+                color: red;
+            }
+        }
+        ul {
+            padding-left: 30px;
+            li {
+                list-style: none;
+                font-size: 24px;
+                padding-bottom: 10px;
+                margin-top: 15px;
+                border-bottom: 1px solid $lightColor;
+                & label {
+                    margin-left: 10px;
+                    width: max-content;
+                    position: relative;
+
+                    & span {
+                        content: "";
+                        position: absolute;
+                        height: 2px;
+                        width: 0;
+                        left: 0;
+                        top: 50%;
+                        background-color: #333;
+                        transition: all 500ms;
+                    }
+                }
+            }
+        }
+        form {
+            padding-left: 20px;
+            padding-top: 20px;
+        }
+        form button {
+            color: $primaryColor;
+        }
+        form input {
+            border-bottom: 1px solid #000;
+            color: #000;
+            font-size: 20px;
+            width: 70%;
+        }
+
+        footer {
+            background-color: $primaryColor;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            color: $lightColor;
+            padding: 15px;
+            div {
+                cursor: pointer;
+            }
+            .clear {
+                margin-right: 15%;
+            }
+        }
+        &.unhide {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced ToDo Lists</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;900&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <h1>Stuff I need to do</h1>
+    <main>
+        <aside class="listsContainer">
+
+            <h2>My lists</h2>
+            <ul class="listsWrapper">
+                <!-- <li class="list active">Youtube</li>
+                <li class="list">Work</li>
+                <li class="list">Free Time</li> -->
+            </ul>
+            <form name="addListForm" action="">
+                <button type="submit">+</button>
+                <input type="text" value="" name="newEntryInput">
+            </form>
+
+        </aside>
+        <aside class="tasksContainer">
+            <header>
+                <h3 class="listName" data-list-id>Choose a list</h3>
+                <div class="tasksCounter"></div>
+            </header>
+
+            <ul class="tasksWrapper">
+                <!-- <li>
+                    <input type="checkbox" id="task1">
+                    <label for="task1">record todo list video</label>
+                </li> -->
+            </ul>
+
+            <form name="addTaskForm" action="">
+                <button type="submit">+</button>
+                <input type="text" name="newTaskInput" placeholder="new task name">
+            </form>
+
+            <footer>
+                <div class="clear">Clear completed tasks</div>
+                <div class="delete">Delete list</div>
+            </footer>
+        </aside>
+    </main>
+
+    <script src="./js/globales.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
