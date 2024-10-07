@@ -4,6 +4,7 @@
   src: url("./fonts/WorkSans-Regular.ttf") format("truetype");
   font-style: normal;
 }
+
 /* Work-Sans Light  */
 @font-face {
   font-family: "Work-Sans_Light";
@@ -11,6 +12,7 @@
   font-weight: 300;
   font-style: normal;
 }
+
 /* Work-Sans Semi-bold */
 @font-face {
   font-family: "Work-Sans_Semi-bold";
@@ -18,6 +20,7 @@
   font-weight: 600;
   font-style: normal;
 }
+
 /* Work-Sans bold */
 @font-face {
   font-family: "Work-Sans_bold";
@@ -25,6 +28,7 @@
   font-weight: 700;
   font-style: normal;
 }
+
 /* Work-Sans Black */
 @font-face {
   font-family: "Work-Sans_Black";
@@ -32,6 +36,7 @@
   font-weight: 900;
   font-style: normal;
 }
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -68,6 +73,7 @@ main {
   margin-left: auto;
   margin-right: auto;
 }
+
 main aside.listsContainer {
   flex: 1 250px;
   padding: 15px;
@@ -76,12 +82,14 @@ main aside.listsContainer {
   color: #f4f4f4;
   background-color: #3670c7;
 }
+
 main aside.listsContainer h2 {
   font-size: 36px;
   font-family: "Work-Sans_bold";
   font-weight: 700;
   margin-bottom: 30px;
 }
+
 main aside.listsContainer ul li.list {
   list-style: circle;
   margin: 14px;
@@ -89,15 +97,19 @@ main aside.listsContainer ul li.list {
   cursor: pointer;
   transition: all ease 0.3s;
 }
+
 main aside.listsContainer ul li.list:hover {
   padding-left: 10px;
 }
+
 main aside.listsContainer ul li.active-list {
   font-weight: 700;
 }
+
 main aside.listsContainer form {
   margin-left: -15px;
 }
+
 main form button,
 main form input {
   height: 30px;
@@ -105,18 +117,37 @@ main form input {
   color: #f4f4f4;
   background-color: inherit;
 }
+
 main form button {
   width: 30px;
   font-size: 30px;
   font-family: "Work-Sans_bold";
   font-weight: 700;
 }
+
 main form input {
   max-width: 200px;
   font-size: 18px;
   border-bottom: 1px solid #f4f4f4;
   outline: none;
 }
+
+main form input::-moz-placeholder {
+  color: #333;
+}
+
+main form input:-ms-input-placeholder {
+  color: #333;
+}
+
+main form input::placeholder {
+  color: #333;
+}
+
+main form input:focus {
+  border-bottom-width: 2px;
+}
+
 main aside.tasksContainer {
   flex: 1 350px;
   background-color: #f4f4f4;
@@ -126,6 +157,7 @@ main aside.tasksContainer {
   height: fit-content;
   display: none;
 }
+
 main aside.tasksContainer header {
   background-color: #e4e4e4;
   display: flex;
@@ -133,17 +165,21 @@ main aside.tasksContainer header {
   align-items: center;
   padding: 30px;
 }
+
 main aside.tasksContainer header .listName {
   font-size: 34px;
   font-family: "Work-Sans_bold";
   font-weight: 700;
 }
+
 main aside.tasksContainer header .tasksCounter {
   color: red;
 }
+
 main aside.tasksContainer ul {
   padding-left: 30px;
 }
+
 main aside.tasksContainer ul li {
   list-style: none;
   font-size: 24px;
@@ -151,6 +187,7 @@ main aside.tasksContainer ul li {
   margin-top: 15px;
   border-bottom: 1px solid #e4e4e4;
 }
+
 main aside.tasksContainer ul li label {
   margin-left: 10px;
   width: -webkit-max-content;
@@ -158,6 +195,7 @@ main aside.tasksContainer ul li label {
   width: max-content;
   position: relative;
 }
+
 main aside.tasksContainer ul li label span {
   content: "";
   position: absolute;
@@ -168,19 +206,27 @@ main aside.tasksContainer ul li label span {
   background-color: #333;
   transition: all 500ms;
 }
+
 main aside.tasksContainer form {
   padding-left: 20px;
   padding-top: 20px;
 }
+
 main aside.tasksContainer form button {
   color: #3670c7;
 }
+
 main aside.tasksContainer form input {
   border-bottom: 1px solid #000;
   color: #000;
   font-size: 20px;
   width: 70%;
 }
+
+main aside.tasksContainer form input:focus {
+  border-bottom-width: 2px;
+}
+
 main aside.tasksContainer footer {
   background-color: #3670c7;
   margin-top: 30px;
@@ -189,12 +235,25 @@ main aside.tasksContainer footer {
   color: #e4e4e4;
   padding: 15px;
 }
+
 main aside.tasksContainer footer div {
   cursor: pointer;
 }
+
+main aside.tasksContainer footer div:hover {
+  text-shadow: 1px 1px 2px black;
+}
+
 main aside.tasksContainer footer .clear {
   margin-right: 15%;
 }
+
 main aside.tasksContainer.unhide {
   display: block;
-}/*# sourceMappingURL=style.css.map */
+}
+
+form button:hover {
+  text-shadow: 1px 1px 2px black;
+}
+
+/*# sourceMappingURL=style.css.map */

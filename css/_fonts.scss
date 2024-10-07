@@ -1,43 +1,42 @@
-
 /* Work-Sans Regular  */
 @font-face {
-    font-family: "Work-Sans";
-    src: url("./fonts/WorkSans-Regular.ttf") format('truetype');
-    font-style: normal;
+  font-family: "Work-Sans";
+  src: url("./fonts/WorkSans-Regular.ttf") format("truetype");
+  font-style: normal;
 }
 /* Work-Sans Light  */
 @font-face {
-    font-family: "Work-Sans_Light";
-    src: url("./fonts/WorkSans-Light.ttf") format('truetype');
-    font-weight: 300;
-    font-style: normal;
+  font-family: "Work-Sans_Light";
+  src: url("./fonts/WorkSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
 }
 /* Work-Sans Semi-bold */
 @font-face {
-    font-family: "Work-Sans_Semi-bold";
-    src: url("./fonts/WorkSans-SemiBold.ttf") format('truetype');
-    font-weight: 600;
-    font-style: normal;
+  font-family: "Work-Sans_Semi-bold";
+  src: url("./fonts/WorkSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
 }
 /* Work-Sans bold */
 @font-face {
-    font-family: "Work-Sans_bold";
-    src: url("./fonts/WorkSans-Bold.ttf") format('truetype');
-    font-weight: 700;
-    font-style: normal;
+  font-family: "Work-Sans_bold";
+  src: url("./fonts/WorkSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
 }
 /* Work-Sans Black */
 @font-face {
-    font-family: "Work-Sans_Black";
-    src: url("./fonts/WorkSans-Black.ttf") format('truetype');
-    font-weight: 900;
-    font-style: normal;
+  font-family: "Work-Sans_Black";
+  src: url("./fonts/WorkSans-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
 }
 
-@mixin fontProperties ($size,$weight) {
-    font: {
-        size: $size;
-        family: "Work-Sans_bold";
-        weight: $weight;}
-    
+@mixin fontProperties($size, $weight) {
+  font: {
+    size: $size;
+    family: "Work-Sans_bold";
+    weight: $weight;
+  }
 }

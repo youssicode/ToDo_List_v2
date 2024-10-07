@@ -10,7 +10,3 @@ let listName = document.querySelector("h3.listName")
 let tasksCounter = document.querySelector(".tasksCounter")
 let clearBtn = document.querySelector(".clear")
 let delBtn = document.querySelector(".delete")
-
-
-
-// let radio = document.querySelector("#task1")
