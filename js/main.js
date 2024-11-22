@@ -38,16 +38,14 @@ function createList(listId, value, evt) {
   newList.classList.add("list")
   newList.setAttribute("data-list-id", listId)
   myListsUl.appendChild(newList)
-  if (evt.type == "submit") {
-    // Active the Clicked-On list and display its tasks in the right window
-    listOnClick(newList, listId) // the Function is executed when Submiting new created List
-    // Here the targeted list is known
-    return
-  }
   newList.addEventListener("click", (ev) => {
-    listOnClick(ev.target, listId) // the Function is executed after Click On the new created List
-    // Here the targeted list is unknown
+    // the Function is executed after Clicking On the new created List (Here the targeted list is unknown)
+    listOnClick(ev.target, listId)
   })
+
+  // the 'listOnClick' function is executed when submiting new created List
+  // and it will active the Clicked-On list and display its tasks in the tasks window
+  if (evt.type == "submit") listOnClick(newList, listId)
 }
 
 //* On List Click OR Submiting new created List
