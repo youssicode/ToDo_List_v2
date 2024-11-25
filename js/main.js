@@ -1,14 +1,12 @@
 //* Display "My lists" content when loading
 
-window.addEventListener("load", (event) => {
-  loadLists(event)
-})
+window.addEventListener("load", loadLists())
 
-function loadLists(event) {
+function loadLists() {
   if (myLists.length > 0) {
     tasksContainer.classList.add("unhide")
     myLists.forEach(({ id, listName }) => {
-      createList(id, listName, event)
+      createList(id, listName)
     })
   }
 }
@@ -19,8 +17,13 @@ listsForm.addEventListener("submit", function (event) {
   const userInput = newListInput.value.trim()
   if (userInput) {
     tasksContainer.classList.add("unhide")
-    let newListId = saveList(userInput) // Save the new list and get it's Id
-    createList(newListId, userInput, event)
+    // Save the new list and get it's Id
+    let newListId = saveList(userInput)
+    // Create the new list's UI
+    const newCreatedList = createList(newListId, userInput)
+    // Trigger 'handleListClick' to display the new list in the tasks UI
+    handleListClick(newCreatedList, newListId)
+
     newListInput.value = ""
   }
 })
@@ -32,7 +35,7 @@ function saveList(input) {
   return newList.id // To add To "data-list-id" Attribute of the new created Li
 }
 
-function createList(listId, value, event) {
+function createList(listId, value) {
   let newList = document.createElement("LI")
   newList.innerText = value
   newList.classList.add("list")
@@ -41,9 +44,7 @@ function createList(listId, value, event) {
   newList.addEventListener("click", () => {
     handleListClick(newList, listId)
   })
-
-  // Trigger 'handleListClick' to display the new list in the tasks UI
-  if (event.type == "submit") handleListClick(newList, listId)
+  return newList
 }
 
 //* On List Click OR Submiting new created List
@@ -200,33 +201,44 @@ clearBtn.onclick = function () {
   }
 }
 
-deleteBtn.onclick = function (evt) {
+deleteBtn.onclick = function () {
   const activeListId = getActiveListId()
   if (activeListId) {
     deleteList(activeListId)
     storeUpdated()
-    clearListUI()
-    loadLists(evt) // Displaying Filtred lists
+    clearListUI(activeListId)
   }
 }
+
 function deleteList(attrId) {
   const index = myLists.findIndex((list) => list.id === attrId)
   if (index > -1) myLists.splice(index, 1)
   // Or: myLists = myLists.filter(list => list.id != attrId)
 }
 
-function clearListUI() {
+function clearListUI(activeListId) {
+  clearTasksUI()
+  deleteListElement(activeListId)
+}
+
+function clearTasksUI() {
   myTasksUl.replaceChildren("") // Clear Tasks Container
   listName.innerText = "Choose a list"
   listName.setAttribute("data-list-id", "")
   tasksCounter.innerText = ""
-  myListsUl.replaceChildren("") // Clear Lists Container
 }
+
+function deleteListElement(listId) {
+  const element = document.querySelector(`[data-list-id="${listId}"]`)
+  element.remove()
+}
+
 function getActiveListId() {
   const element_id = listName.getAttribute("data-list-id")
-  // Note: element_id is a String
+  // Note: getAttribute() return a String
   return Number(element_id)
 }
+
 function storeUpdated() {
   window.localStorage.setItem("Lists.To.Do", JSON.stringify(myLists))
 }
