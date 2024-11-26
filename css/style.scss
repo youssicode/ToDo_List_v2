@@ -63,6 +63,10 @@ main {
     }
     form {
       margin-left: -15px;
+      & input::placeholder {
+        color: $lightColor;
+        opacity: 0.7;
+      }
     }
   }
   form button,
@@ -71,6 +75,7 @@ main {
     border: none;
     color: $whiteColor;
     background-color: inherit;
+    font-size: 20px;
   }
   form button {
     width: 30px;
@@ -78,12 +83,9 @@ main {
   }
   form input {
     max-width: 200px;
-    font-size: 18px;
     border-bottom: 1px solid $whiteColor;
     outline: none;
-    &::placeholder {
-      color: $darkColor;
-    }
+
     &:focus {
       border-bottom-width: 2px;
     }
@@ -95,17 +97,20 @@ main {
     color: $darkColor;
     height: fit-content;
     display: none;
+    margin-top: 20px;
     header {
       background-color: $lightColor;
       display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
       justify-content: space-between;
       align-items: center;
-      padding: 30px;
+      padding: 20px;
       .listName {
         @include fontProperties(34px, 700);
       }
       .tasksCounter {
-        color: red;
+        color: $darkColor;
       }
     }
     ul {
@@ -124,7 +129,7 @@ main {
           & span {
             content: "";
             position: absolute;
-            height: 2px;
+            height: 1px;
             width: 0;
             left: 0;
             top: 50%;
@@ -144,8 +149,11 @@ main {
     form input {
       border-bottom: 1px solid #000;
       color: #000;
-      font-size: 20px;
       width: 70%;
+      &::placeholder {
+        color: $darkColor;
+        opacity: 0.7;
+      }
       &:focus {
         border-bottom-width: 2px;
       }
